@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Listing from "./models/listing.js";
 import Review from "./models/review.js";
-mongoose.connect("mongodb://127.0.0.1:27017/wonderlust");
+mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
 
 const USER_ID = "6a45ebdca9a57b49e545bdb3"; // Replace with your user's ObjectId
 

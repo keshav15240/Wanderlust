@@ -19,11 +19,6 @@ const validateListing = (req, res, next) => {
   next();
 };
 
-router.get("/", (req, res) => {
-  res.redirect("/listing");
-});
-
-
 router.get("/new", isLoggedIn, listingcontroller.showNewForm);
 
 router.get(

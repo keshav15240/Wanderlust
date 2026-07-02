@@ -41,8 +41,12 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/wonderlust");
-}
+  console.log(process.env.ATLASDB_URL);
+  console.log("Node Version:", process.version);
+  await mongoose.connect(process.env.ATLASDB_URL, {
+  serverSelectionTimeoutMS: 10000,
+});
+};
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");

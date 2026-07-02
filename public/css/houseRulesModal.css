@@ -1,0 +1,251 @@
+.modal-content{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:none;
+
+box-shadow:
+0 1px 2px rgba(0,0,0,.06),
+0 8px 25px rgba(0,0,0,.04);
+
+    border-radius:20px;
+
+}
+
+.modal-header{
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.modal-title{
+
+    font-weight:700;
+
+}
+
+.rule{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.rule:last-child{
+
+    border:none;
+
+}
+
+.rule i{
+
+    width:35px;
+
+    font-size:1.4rem;
+
+    color:var(--primary);
+
+}
+
+.rule strong{
+
+    color:var(--text);
+
+}
+
+.rule p{
+
+    color:var(--text-light);
+
+    margin:5px 0 0;
+
+}
+
+.btn-close{
+
+    filter:var(--close-filter);
+
+}
+#additionalRulesModal .modal-content{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border-radius:30px;
+
+    border:none;
+
+}
+
+#additionalRulesModal .modal-body{
+
+    padding:2rem;
+
+}
+
+#additionalRulesModal h2{
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+}
+
+#additionalRulesModal p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+}
+
+#additionalRulesModal .btn-close{
+
+    filter:var(--close-filter);
+
+}
+#safetyModal .modal-content{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border-radius:30px;
+
+}
+
+#safetyModal h2{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+}
+
+#safetyModal h5{
+
+    margin-bottom:2rem;
+
+    font-weight:700;
+
+}
+
+#safetyModal .rule{
+
+    padding:1.8rem 0;
+
+}
+
+#safetyModal .rule i{
+
+    font-size:1.7rem;
+
+    color:var(--primary);
+
+}
+.review-btn{
+
+    padding:14px 28px;
+
+    border-radius:15px;
+
+    font-weight:600;
+
+}
+
+#reviewsModal .modal-content{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+}
+
+#reviewsModal .modal-body{
+
+    padding:2rem;
+
+}
+
+#reviewsModal .review-card{
+
+    height:100%;
+
+}
+.review-comment{
+
+    font-size:17px;
+
+    line-height:1.75;
+
+    color:var(--text);
+
+}
+.footer-money{
+
+    font-size:24px;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.footer-money:hover{
+
+    color:#16a34a;
+
+    transform:scale(1.15);
+
+}
+
+.support-video{
+
+    width:100%;
+
+    max-width:420px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+#rupeeModal .modal-content{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:none;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.2);
+
+}
+
+#rupeeModal .modal-body{
+
+    padding:2rem;
+
+}

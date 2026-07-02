@@ -1,0 +1,387 @@
+<% layout("/layouts/boilerplate") %>
+<%
+const amenityIcons = {
+
+"Garden View":"fa-seedling",
+
+"Beach Access":"fa-water",
+
+"Kitchen":"fa-utensils",
+
+"WiFi":"fa-wifi",
+
+"Dedicated Workspace":"fa-laptop",
+
+"Free Parking":"fa-car",
+
+"Swimming Pool":"fa-person-swimming",
+
+"Exterior Security Cameras":"fa-video",
+
+"Carbon Monoxide Alarm":"fa-smog",
+
+"Smoke Alarm":"fa-fire-extinguisher",
+
+"Air Conditioning":"fa-fan",
+
+"Hot Water":"fa-temperature-high",
+
+"TV":"fa-tv",
+
+"Washing Machine":"fa-shirt",
+
+"Iron":"fa-shirt",
+
+"Hair Dryer":"fa-wind",
+
+"Microwave":"fa-microchip",
+
+"Refrigerator":"fa-box",
+
+"Coffee Maker":"fa-mug-hot",
+
+"Balcony":"fa-building"
+
+};
+%>
+
+    <h1>
+        <%= listing.title %>
+    </h1>
+
+    <div class="card text-white show-card">
+
+        <img src="<%= listing.image.url %>" class="card-img show-img" alt="listing image">
+
+        <div class="card-img-overlay d-flex flex-column justify-content-end">
+
+            <h2 class="card-title">
+                <%= listing.title %>
+            </h2>
+
+            <p class="card-text">
+                <%= listing.description %>
+            </p>
+
+            <p class="card-text">
+                ₹ <%= listing.price.toLocaleString("en-IN") %> / night
+            </p>
+
+            <p class="card-text">
+                <%= listing.location %>, <%= listing.country %>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <br>
+
+    <a href="/listing/<%= listing._id %>/edit" class="btn btn-dark edit-btn">
+        Edit Listing
+    </a>
+
+    <br><br>
+
+    <form method="POST" action="/listing/<%= listing._id %>?_method=DELETE">
+        <button class="btn btn-danger">
+            Delete Listing
+        </button>
+    </form>
+
+    <div class="col-8 offset-2 mt-4">
+
+        <hr>
+
+        <h4>Write a Review</h4>
+
+        <form action="/listing/<%= listing._id %>/reviews" method="POST" novalidate class="needs-validation">
+
+            <div class="mb-3">
+                <label class="form-label">Rating:</label>
+
+                <div class="star-rating">
+
+                    <input type="radio" id="star5" name="review[rating]" value="5" required>
+                    <label for="star5">★</label>
+
+                    <input type="radio" id="star4" name="review[rating]" value="4">
+                    <label for="star4">★</label>
+
+                    <input type="radio" id="star3" name="review[rating]" value="3">
+                    <label for="star3">★</label>
+
+                    <input type="radio" id="star2" name="review[rating]" value="2">
+                    <label for="star2">★</label>
+
+                    <input type="radio" id="star1" name="review[rating]" value="1">
+                    <label for="star1">★</label>
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comment:</label>
+
+                <textarea class="form-control" name="review[comment]" id="comment" rows="5" minlength="10"
+                    maxlength="200" required></textarea>
+
+                <div class="valid-feedback">
+                    Review looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please enter a review between 10 and 200 characters.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Submit Review
+            </button>
+
+        </form>
+
+        <hr>
+
+        <h4>Reviews</h4>
+
+        <div class="row">
+
+            <% listing.reviews.forEach((review,index)=>{ %>
+
+                <div class="col-lg-6 mb-4 <%= index >= 6 ? 'd-none' : '' %>">
+
+                    <div class="review-card">
+
+                        <!-- Header -->
+                        <div class="review-header">
+
+                            <div class="review-avatar">
+
+                                <%= review.author?.username?.charAt(0).toUpperCase() || "?" %>
+
+                            </div>
+
+                            <div class="review-user-info">
+
+                                <h5 class="mb-0">
+                                    <%= review.author?.username || "Unknown User" %>
+                                </h5>
+
+
+
+                                <small class="verified-user">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Verified Guest
+                                </small>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- Rating -->
+
+                        <div class="review-stars mt-3">
+
+                            <% for(let i=0;i<review.rating;i++){ %>
+                                ★
+                                <% } %>
+
+                                    <% for(let i=review.rating;i<5;i++){ %>
+                                        ☆
+                                        <% } %>
+
+                                            <span class="review-date">
+                                                ·
+                                                <%= review.createdAt.toLocaleDateString("en-IN",{ month:"short",
+                                                    year:"numeric" }) %>
+                                            </span>
+
+                        </div>
+
+                        <!-- Comment -->
+
+                        <p class="review-comment mt-3">
+
+                            <%= review.comment %>
+
+                        </p>
+
+                        <% if(review.comment.length> 180){ %>
+
+                            <button class="show-more-btn">
+
+                                Show more
+
+                            </button>
+
+                            <% } %>
+
+                                <% if(currentUser && review.author && review.author._id.equals(currentUser._id)){ %>
+
+                                    <form method="POST"
+                                        action="/listing/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+
+                                        <button class="btn btn-outline-danger btn-sm mt-3">
+
+                                            Delete Review
+
+                                        </button>
+
+                                    </form>
+
+                                    <% } %>
+
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+        </div>
+        <% if(listing.reviews.length>6){ %>
+
+            <div class="mt-4">
+
+                <button class="btn btn-success review-btn" data-bs-toggle="modal" data-bs-target="#reviewsModal">
+
+                    Show all <%= listing.reviews.length %> reviews
+
+                </button>
+
+            </div>
+
+            <% } %>
+
+<hr class="my-5">
+
+<section class="amenities-section">
+
+    <h2>What this place offers</h2>
+
+    <div class="amenities-grid">
+
+        <% listing.amenities.slice(0,10).forEach(item => { %>
+
+            <div class="amenity">
+
+                <i class="fa-solid <%= amenityIcons[item] || 'fa-circle-check' %>"></i>
+
+                <span><%= item %></span>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+    <button
+        class="btn btn-success amenities-btn "
+        data-bs-toggle="modal"
+        data-bs-target="#amenitiesModal">
+
+        Show all <%= listing.amenities.length %> amenities
+
+    </button>
+
+</section>
+
+                <hr class="my-5">
+
+                <section class="things-to-know">
+
+                    <h2>Things to Know</h2>
+
+                    <div class="things-grid">
+
+                        <!-- Cancellation -->
+
+                        <div class="thing-card">
+
+                            <i class="fa-regular fa-calendar-xmark"></i>
+
+                            <h5>Cancellation Policy</h5>
+
+                            <p>
+                                Free cancellation within 24 hours of booking.
+                                Cancellations made later may incur charges.
+                            </p>
+
+                            <a href="#">Learn more</a>
+
+                        </div>
+
+                        <!-- House Rules -->
+
+                        <div class="thing-card">
+
+                            <i class="fa-solid fa-key"></i>
+
+                            <h5>House Rules</h5>
+
+                            <ul>
+
+                                <li>Check-in: 2:00 PM</li>
+
+                                <li>Check-out: 10:00 AM</li>
+
+                                <li>Maximum guests: <%= listing.maxGuests || 4 %>
+                                </li>
+
+                                <li>No smoking indoors</li>
+
+                            </ul>
+
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#houseRulesModal"
+                                class="learn-more-link">
+
+                                Learn more
+
+                            </a>
+
+                        </div>
+
+                        <!-- Safety -->
+
+                        <div class="thing-card">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <h5>Safety & Property</h5>
+
+                            <ul>
+
+                                <li>Smoke detector installed</li>
+
+                                <li>Fire extinguisher available</li>
+
+                                <li>First aid kit available</li>
+
+                                <li>24×7 security available</li>
+
+                            </ul>
+
+                            <a href="#" class="learn-more-link" data-bs-toggle="modal" data-bs-target="#safetyModal">
+
+                                Learn more
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+
+                <%- include("../includes/houseRulesModal.ejs") %>
+                    <%- include("../includes/safetyModal.ejs") %>
+                        <%- include("../includes/reviewModal.ejs") %>
+                        <%- include("../includes/amenitiesModal.ejs") %>
+    </div>

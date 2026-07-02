@@ -1,0 +1,37 @@
+=<div class="modal fade" id="amenitiesModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">What this place offers</h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <% listing.amenities.forEach(item => { %>
+
+                        <div class="col-md-6 mb-3">
+
+                           <i class="fa-solid fa-check me-2"></i>
+
+                            <%= item %>
+
+                        </div>
+
+                    <% }) %>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

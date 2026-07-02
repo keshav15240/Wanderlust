@@ -1,0 +1,56 @@
+<% layout("layouts/boilerplate") %>
+
+<br>
+
+<% for (let location in groupedListings) { %>
+
+<div class="location-section">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <h2 class="location-title">
+            Popular homes in <%= location %>
+        </h2>
+
+       <button class="scroll-btn scroll-right">
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
+
+    </div>
+
+    <div class="horizontal-scroll listing-slider">
+
+        <% groupedListings[location].forEach(listing => { %>
+
+            <a href="/listing/<%= listing._id %>" class="listing-link">
+
+                <div class="listing-card2">
+
+                    <img
+                        src="<%= listing.image.url %>"
+                        class="listing-image"
+                        alt="">
+
+                    <div class="listing-info">
+
+                        <h5><%= listing.title %></h5>
+
+                        <p>
+                            ₹ <%= listing.price.toLocaleString("en-IN") %> / night
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        <% }) %>
+
+    </div>
+
+</div>
+
+<br><br>
+
+<% } %>

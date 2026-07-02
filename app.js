@@ -41,12 +41,10 @@ main()
   });
 
 async function main() {
-  console.log(process.env.ATLASDB_URL);
-  console.log("Node Version:", process.version);
-  await mongoose.connect(process.env.ATLASDB_URL, {
-  serverSelectionTimeoutMS: 10000,
-});
-};
+  console.log("Connecting to MongoDB...");
+  await mongoose.connect(process.env.ATLASDB_URL);
+  console.log("MongoDB Connected!");
+}
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");

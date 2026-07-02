@@ -19,7 +19,7 @@ const validateListing = (req, res, next) => {
   next();
 };
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.redirect("/listing");
 });
 

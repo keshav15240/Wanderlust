@@ -2,7 +2,7 @@
 <h3>CREATE NEW LISTING</h3>
 <br />
 
-<form method="POST" action="/listing" enctype="multipart/form-data" novalidate class="needs-validation">
+<form method="POST" action="/" enctype="multipart/form-data" novalidate class="needs-validation">
   <div class="row">
     <div class="col-8 offset-2">
       <div class="mb-3">
@@ -25,8 +25,7 @@
           placeholder="enter description"
           class="form-control"
           required
-        >
-        </textarea>
+        ></textarea>
         <div class="valid-feedback">Description Looks good!</div>
         <div class="invalid-feedback">Please provide a description for your listing.</div>
       </div>
@@ -38,6 +37,7 @@
     type="file"
     name="image"
     class="form-control"
+    accept="image/*"
     required
   />
 
@@ -92,7 +92,8 @@
       </div>
 
 
-      <button class="btn btn-dark new-btn">add</button>
+      <button class="btn btn-dark new-btn">Create Listing</button>
     </div>
   </div>
 </form>
+<script src="/js/validation.js"></script>

@@ -1,24 +1,32 @@
 import mongoose from "mongoose";
 
-const reviewSchema = new mongoose.Schema({
-  comment: String,
+const reviewSchema = new mongoose.Schema(
+  {
+    comment: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 10,
+      maxlength: 200,
+    },
 
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
-  },
+    rating: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 5,
+    },
 
-  createdAt: {
-    type: Date,
-    default: Date.now,
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
-
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 const Review = mongoose.model("Review", reviewSchema);
 

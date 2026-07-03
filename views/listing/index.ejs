@@ -21,14 +21,14 @@
 
         <% groupedListings[location].forEach(listing => { %>
 
-            <a href="/listing/<%= listing._id %>" class="listing-link">
+            <a href="/<%= listing._id %>" class="listing-link">
 
                 <div class="listing-card2">
 
                     <img
                         src="<%= listing.image.url %>"
                         class="listing-image"
-                        alt="">
+                        alt="<%= listing.title %>">
 
                     <div class="listing-info">
 

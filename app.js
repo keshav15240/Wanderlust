@@ -1,4 +1,7 @@
 import "dotenv/config";
+import dns from "dns";
+
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import express from "express";
 import mongoose from "mongoose";
 import path from "path";
@@ -9,12 +12,13 @@ import flash from "connect-flash";
 import session from "express-session";
 import passport from "passport";
 import LocalStrategy from "passport-local";
-
+import helmet from "helmet";
 import ExpressError from "./utils/expresserror.js";
 import listingRoutes from "./routes/listing.js";
 import userRoutes from "./routes/user.js";
 import reviewsRoutes from "./routes/review.js";
 import User from "./models/user.js";
+import MongoStore from "connect-mongo";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,13 +44,25 @@ async function connectDB() {
     process.exit(1);
   }
 }
-
 connectDB();
 
 // ======================
 // Session Configuration
 // ======================
+const store = MongoStore.create({
+  mongoUrl: process.env.ATLASDB_URL,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", (err) => {
+  console.error("Mongo Session Store Error:", err);
+});
+
 const sessionOptions = {
+  store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
@@ -54,6 +70,8 @@ const sessionOptions = {
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
   },
 };
 
@@ -71,7 +89,60 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+const scriptSrcUrls = [
+  "https://cdn.jsdelivr.net",
+  "https://cdnjs.cloudflare.com",
+];
 
+const styleSrcUrls = [
+  "https://cdn.jsdelivr.net",
+  "https://cdnjs.cloudflare.com",
+  "https://fonts.googleapis.com",
+];
+
+const fontSrcUrls = [
+  "https://fonts.gstatic.com",
+  "https://cdnjs.cloudflare.com",
+];
+
+const imgSrcUrls = [
+  "'self'",
+  "data:",
+  "blob:",
+  "https://res.cloudinary.com",
+   "https://picsum.photos",
+];
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+
+        scriptSrc: ["'self'", ...scriptSrcUrls],
+
+        styleSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          ...styleSrcUrls,
+        ],
+
+        imgSrc: imgSrcUrls,
+
+        connectSrc: ["'self'"],
+
+        fontSrc: [
+          "'self'",
+          ...fontSrcUrls,
+        ],
+
+        objectSrc: ["'none'"],
+
+        upgradeInsecureRequests: [],
+      },
+    },
+  })
+);
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -99,9 +170,10 @@ app.use((req, res, next) => {
 // ======================
 // Routes
 // ======================
-app.use("/listing/:id/reviews", reviewsRoutes);
-app.use("/listing", listingRoutes);
 app.use("/", userRoutes);
+app.use("/:id/reviews", reviewsRoutes);
+app.use("/", listingRoutes);
+
 
 // ======================
 // 404 Handler

@@ -1,8 +1,8 @@
 import express from "express";
 import wrapAsync from "../utils/wrapAsync.js";
 import ExpressError from "../utils/expresserror.js";
-import { isLoggedIn , isReviewAuthor , isOwner} from "../middleware.js";
-import listingSchema  from "../schema.js";
+import { isLoggedIn , isOwner} from "../middleware.js";
+import {listingSchema}  from "../schema.js";
 import * as listingcontroller from "../controllers/listing.js";
 import { storage } from "../cloudconfig.js";
 import multer from "multer";
@@ -12,7 +12,7 @@ const validateListing = (req, res, next) => {
   const { error } = listingSchema.validate(req.body);
 
   if (error) {
-    let errmsg = error.details.map((el) => el.message).join(",");
+    const errmsg = error.details.map((el) => el.message).join(",");
     throw new ExpressError(400, errmsg);
   }
 

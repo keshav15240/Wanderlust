@@ -1,24 +1,27 @@
 import express from "express";
-import User from "../models/user.js";
-import wrapAsync from "../utils/wrapAsync.js";
 import passport from "passport";
-import * as usercontroller from "../controllers/user.js";
+
+import wrapAsync from "../utils/wrapAsync.js";
+import * as userController from "../controllers/user.js";
 
 const router = express.Router();
 
-router.get("/logout", usercontroller.logout);
+router.get("/logout", userController.logout);
 
-router.route("/signup")
-  .get(usercontroller.showSignupForm)
-  .post(wrapAsync(usercontroller.signup));
+router
+  .route("/signup")
+  .get(userController.showSignupForm)
+  .post(wrapAsync(userController.signup));
 
-router.route("/login")
-  .get(usercontroller.login)
+router
+  .route("/login")
+  .get(userController.login)
   .post(
     passport.authenticate("local", {
       failureRedirect: "/login",
       failureFlash: true,
     }),
-    usercontroller.loginSuccess
+    userController.loginSuccess
   );
+
 export default router;

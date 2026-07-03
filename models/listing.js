@@ -1,53 +1,107 @@
 import mongoose from "mongoose";
 import Review from "./review.js";
 
-const listingSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-
-  description: String,
-
-  image: {
-    url: String,
-    filename: String,
-  },
-
-  price: Number,
-
-  location: String,
-
-  country: String,
-
-  // NEW
-  amenities: [
-    {
+const listingSchema = new mongoose.Schema(
+  {
+    title: {
       type: String,
+      required: true,
+      trim: true,
+      maxlength: 100,
     },
-  ],
 
-  reviews: [
-    {
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    image: {
+      url: {
+        type: String,
+        required: true,
+      },
+      filename: {
+        type: String,
+        required: true,
+      },
+    },
+
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
+    location: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    country: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    amenities: {
+      type: [String],
+      default: [
+        "Garden View",
+        "Beach Access",
+        "Kitchen",
+        "WiFi",
+        "Dedicated Workspace",
+        "Free Parking",
+        "Swimming Pool",
+        "Exterior Security Cameras",
+        "Carbon Monoxide Alarm",
+        "Smoke Alarm",
+        "Air Conditioning",
+        "Hot Water",
+        "TV",
+        "Washing Machine",
+        "Iron",
+        "Hair Dryer",
+        "Microwave",
+        "Refrigerator",
+        "Coffee Maker",
+        "Balcony",
+      ],
+    },
+
+    reviews: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review",
+      },
+    ],
+
+    owner: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Review",
+      ref: "User",
+      required: true,
     },
-  ],
-
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
   },
+  {
+    timestamps: true,
+  }
+);
+
+listingSchema.index({
+  location: 1,
+  country: 1,
 });
 
 listingSchema.post("findOneAndDelete", async function (doc) {
-  if (doc) {
-    await Review.deleteMany({
-      _id: {
-        $in: doc.reviews,
-      },
-    });
-  }
+  if (!doc) return;
+
+  await Review.deleteMany({
+    _id: {
+      $in: doc.reviews,
+    },
+  });
 });
 
 const Listing = mongoose.model("Listing", listingSchema);

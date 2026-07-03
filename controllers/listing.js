@@ -1,6 +1,6 @@
 import Listing from "../models/listing.js";
 export const index = async (req, res) => {
-  const alllistings = await Listing.find({});
+  const alllistings = await Listing.find().lean();
    const groupedListings = {};
 
   alllistings.forEach((listing) => {
@@ -13,14 +13,14 @@ export const index = async (req, res) => {
 
   });
 
-  res.render("listing/index.ejs", {
+  res.render("listing/index", {
     groupedListings,
   });
 
 };
 
 export const showListing = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
   const listing = await Listing.findById(id)
   .populate("owner")
   .populate({
@@ -32,54 +32,35 @@ export const showListing = async (req, res) => {
 });
 
   if (!listing) {
-    req.flash("error", "Cannot find that listing");
+    req.flash("error", "Cannot find that listing.");
     return res.redirect("/listing");
   }
 
-  res.render("listing/show.ejs", { listing });
+  res.render("listing/show", { listing });
 };
 
 export const showNewForm = (req, res) => {
-  res.render("listing/new.ejs");
+  res.render("listing/new");
 };
   
 
 export const createListing = async (req, res) => {
   const newListing = new Listing(req.body.listing);
-newListing.amenities = [
-  "Garden View",
-  "Beach Access",
-  "Kitchen",
-  "WiFi",
-  "Dedicated Workspace",
-  "Free Parking",
-  "Swimming Pool",
-  "Exterior Security Cameras",
-  "Carbon Monoxide Alarm",
-  "Smoke Alarm",
-  "Air Conditioning",
-  "Hot Water",
-  "TV",
-  "Washing Machine",
-  "Iron",
-  "Hair Dryer",
-  "Microwave",
-  "Refrigerator",
-  "Coffee Maker",
-  "Balcony"
-];
-let url = req.file.path;
-  let filename = req.file.filename;
-  newListing.owner = req.user._id;
-  newListing.image = { url, filename };
+newListing.owner = req.user._id;
 
+if (req.file) {
+  newListing.image = {
+    url: req.file.path,
+    filename: req.file.filename,
+  };
+}
 await newListing.save();
   req.flash("success", "New Listing Created!");
   res.redirect("/listing");
 };
 
 export const showEditForm = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
   const listingData = await Listing.findById(id);
 
   if (!listingData) {
@@ -88,21 +69,27 @@ export const showEditForm = async (req, res) => {
   }
   let originalimageurl = listingData.image.url;
 originalimageurl = originalimageurl.replace("/upload", "/upload/w_300,h_200,c_fill");
-  res.render("listing/edit.ejs", { listing: listingData, originalimageurl });
+  res.render("listing/edit", { listing: listingData, originalimageurl });
 };
 
 export const updateListing = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
 
-  let listing = await Listing.findByIdAndUpdate(id, {
-    ...req.body.listing,
-  }, { new : true});
+ const listing = await Listing.findByIdAndUpdate(
+  id,
+  req.body.listing,
+  {
+    new: true,
+    runValidators: true,
+  }
+);
 
 
   if (req.file) {
-    let url = req.file.path;
-    let filename = req.file.filename;
-    listing.image = { url, filename };
+    listing.image = {
+  url: req.file.path,
+  filename: req.file.filename,
+};
     await listing.save();
   }
 
@@ -111,7 +98,7 @@ export const updateListing = async (req, res) => {
 };
 
 export const deleteListing = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
 
   await Listing.findByIdAndDelete(id);
 

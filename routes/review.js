@@ -10,12 +10,10 @@ import { isLoggedIn, isReviewAuthor } from "../middleware.js";
 
 const validateReview = (req, res, next) => {
   const { error } = reviewSchema.validate(req.body);
-
   if (error) {
-    let errmsg = error.details.map((el) => el.message).join(",");
+    const errmsg = error.details.map((el) => el.message).join(",");
     throw new ExpressError(400, errmsg);
   }
-
   next();
 };
 
@@ -24,26 +22,18 @@ router.post(
   isLoggedIn,
   validateReview,
   wrapAsync(async (req, res) => {
-
-    console.log("===== REVIEW ROUTE HIT =====");
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req.user);
-
-    let listing = await Listing.findById(req.params.id);
-
-    let newReview = new Review(req.body.review);
-
+    const listing = await Listing.findById(req.params.id);
+if (!listing) {
+    req.flash("error", "Listing not found.");
+    return res.redirect("/");
+}
+    const newReview = new Review(req.body.review);
     newReview.author = req.user._id;
-
     listing.reviews.push(newReview);
-
     await newReview.save();
     await listing.save();
-
-    console.log("review sabed")
     req.flash("success", "New review added!");
-    res.redirect(`/listing/${listing._id}`);
+    res.redirect(`/${listing._id}`);
   })
 );
 
@@ -52,17 +42,18 @@ router.delete(
   isLoggedIn,
   isReviewAuthor,
   wrapAsync(async (req, res) => {
-    let { id, reviewId } = req.params;
-
+    const { id, reviewId } = req.params;
     await Listing.findByIdAndUpdate(id, {
       $pull: { reviews: reviewId },
     });
 
-    await Review.findByIdAndDelete(reviewId);
-
+    const review = await Review.findByIdAndDelete(reviewId);
+if (!review) {
+    req.flash("error", "Review not found.");
+    return res.redirect(`/${id}`);
+}
     req.flash("success", "Review deleted!");
-    res.redirect(`/listing/${id}`);
+    res.redirect(`/${id}`);
   })
 );
-
 export default router;

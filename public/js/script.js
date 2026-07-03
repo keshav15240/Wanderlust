@@ -3,103 +3,68 @@
 // ======================================================
 
 (() => {
+  "use strict";
 
-    'use strict';
+  const forms = document.querySelectorAll(".needs-validation");
 
-    const forms = document.querySelectorAll('.needs-validation');
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-    Array.from(forms).forEach(form => {
-
-        form.addEventListener('submit', event => {
-
-            if (!form.checkValidity()) {
-
-                event.preventDefault();
-                event.stopPropagation();
-
-            }
-
-            form.classList.add('was-validated');
-
-        }, false);
-
+      form.classList.add("was-validated");
     });
-
+  });
 })();
 
 // ======================================================
 // Dark / Light Mode
 // ======================================================
 
-const toggle = document.getElementById("theme-toggle");
+const themeToggle = document.getElementById("theme-toggle");
 
-function updateIcon() {
+const updateThemeIcon = () => {
+  if (!themeToggle) return;
 
-    if (!toggle) return;
-
-    if (document.body.classList.contains("dark-mode")) {
-
-        toggle.innerHTML =
-            '<i class="fa-solid fa-sun"></i>';
-
-    } else {
-
-        toggle.innerHTML =
-            '<i class="fa-solid fa-moon"></i>';
-
-    }
-
-}
+  themeToggle.innerHTML = document.body.classList.contains("dark-mode")
+    ? '<i class="fa-solid fa-sun"></i>'
+    : '<i class="fa-solid fa-moon"></i>';
+};
 
 // Load saved theme
+const savedTheme = localStorage.getItem("theme");
 
-if (localStorage.getItem("theme") === "dark") {
-
-    document.body.classList.add("dark-mode");
-
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
 }
 
-updateIcon();
+updateThemeIcon();
 
-// Toggle theme
+// Toggle Theme
+themeToggle?.addEventListener("click", () => {
+  const isDarkMode = document.body.classList.toggle("dark-mode");
 
-if (toggle) {
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
-    toggle.addEventListener("click", () => {
+  updateThemeIcon();
+});
 
-        document.body.classList.toggle("dark-mode");
+// ======================================================
+// Horizontal Listing Slider
+// ======================================================
 
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark-mode")
-                ? "dark"
-                : "light"
-        );
+document.querySelectorAll(".location-section").forEach((section) => {
+  const slider = section.querySelector(".listing-slider");
+  const scrollButton = section.querySelector(".scroll-right");
 
-        updateIcon();
+  if (!slider || !scrollButton) return;
 
+  scrollButton.addEventListener("click", () => {
+    slider.scrollBy({
+      left: 700,
+      behavior: "smooth",
     });
-
-}
-// ======================================
-// Horizontal Slider
-// ======================================
-
-document.querySelectorAll(".location-section").forEach(section => {
-
-    const slider = section.querySelector(".listing-slider");
-    const button = section.querySelector(".scroll-right");
-
-    button.addEventListener("click", () => {
-
-        slider.scrollBy({
-
-            left: 700,
-
-            behavior: "smooth"
-
-        });
-
-    });
-
+  });
 });

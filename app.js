@@ -12,7 +12,6 @@ import flash from "connect-flash";
 import session from "express-session";
 import passport from "passport";
 import LocalStrategy from "passport-local";
-import helmet from "helmet";
 import ExpressError from "./utils/expresserror.js";
 import listingRoutes from "./routes/listing.js";
 import userRoutes from "./routes/user.js";
@@ -89,60 +88,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-const scriptSrcUrls = [
-  "https://cdn.jsdelivr.net",
-  "https://cdnjs.cloudflare.com",
-];
-
-const styleSrcUrls = [
-  "https://cdn.jsdelivr.net",
-  "https://cdnjs.cloudflare.com",
-  "https://fonts.googleapis.com",
-];
-
-const fontSrcUrls = [
-  "https://fonts.gstatic.com",
-  "https://cdnjs.cloudflare.com",
-];
-
-const imgSrcUrls = [
-  "'self'",
-  "data:",
-  "blob:",
-  "https://res.cloudinary.com",
-   "https://picsum.photos",
-];
-
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-
-        scriptSrc: ["'self'", ...scriptSrcUrls],
-
-        styleSrc: [
-          "'self'",
-          "'unsafe-inline'",
-          ...styleSrcUrls,
-        ],
-
-        imgSrc: imgSrcUrls,
-
-        connectSrc: ["'self'"],
-
-        fontSrc: [
-          "'self'",
-          ...fontSrcUrls,
-        ],
-
-        objectSrc: ["'none'"],
-
-        upgradeInsecureRequests: [],
-      },
-    },
-  })
-);
 app.use(session(sessionOptions));
 app.use(flash());
 

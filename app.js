@@ -19,12 +19,18 @@ import reviewsRoutes from "./routes/review.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 const sessionoptions = {
-  secret: "mysupersecretstring",
-  resave: false,
-  saveUninitialized: true,
-};
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+    }
+}
 
 app.use(express.json());
 app.use(session(sessionoptions));
@@ -42,6 +48,7 @@ main()
 
 async function main() {
   console.log("Connecting to MongoDB...");
+  console.log(process.env.ATLASDB_URL); 
   await mongoose.connect(process.env.ATLASDB_URL);
   console.log("MongoDB Connected!");
 }
@@ -80,6 +87,6 @@ app.use((err, req, res, next) => {
   //res.status(statusCode).send(message);
 });
 
-app.listen(8080, (req, res) => {
-  console.log("server is listening on the port 8080;")
+app.listen(PORT, () => {
+    console.log(`Server running on ${PORT}`);
 });

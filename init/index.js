@@ -1,8 +1,7 @@
+import "dotenv/config";
 import mongoose from "mongoose";
 import data from "./data.js";
 import Listing from "../models/listing.js"
-
-const MONGOURL = "mongodb://127.0.0.1:27017/wanderlust";
 
 main()
   .then(() => {
@@ -12,7 +11,7 @@ main()
 });
 
 async function main() {
-  await mongoose.connect(MONGOURL);
+  await mongoose.connect(process.env.ATLASDB_URL);
 }
 
 const initDB = async () => {

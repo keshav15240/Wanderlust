@@ -1,0 +1,305 @@
+:root {
+  --safety-bg: #ffffff;
+  --safety-text-primary: #222222;
+  --safety-text-secondary: #717171;
+  --safety-link: #222222;
+  --safety-link-hover: #000000;
+  --safety-sidebar-bg: #f7f7f7;
+  --safety-btn-primary-bg: #222222;
+  --safety-btn-primary-border: #222222;
+  --safety-btn-primary-text: #ffffff;
+  --safety-btn-primary-hover-bg: #000000;
+  --safety-btn-primary-hover-border: #000000;
+  --safety-btn-outline-border: #222222;
+  --safety-btn-outline-text: #222222;
+  --safety-btn-outline-hover-bg: #f7f7f7;
+  --safety-btn-outline-hover-border: #000000;
+  --safety-btn-outline-hover-text: #000000;
+  --safety-card-bg: #f7f7f7;
+  --safety-card-border: #e0e0e0;
+  --safety-emergency-bg: #fff3cd;
+  --safety-emergency-border: #ffc107;
+  --safety-emergency-text: #856404;
+  --safety-contact-bg: #f7f7f7;
+  --safety-contact-border: #e0e0e0;
+  --safety-info-bg: #f7f7f7;
+  --safety-info-border: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --safety-bg: #1a1a1a;
+    --safety-text-primary: #ffffff;
+    --safety-text-secondary: #b3b3b3;
+    --safety-link: #ffffff;
+    --safety-link-hover: #e0e0e0;
+    --safety-sidebar-bg: #2d2d2d;
+    --safety-btn-primary-bg: #ffffff;
+    --safety-btn-primary-border: #ffffff;
+    --safety-btn-primary-text: #1a1a1a;
+    --safety-btn-primary-hover-bg: #e0e0e0;
+    --safety-btn-primary-hover-border: #e0e0e0;
+    --safety-btn-outline-border: #ffffff;
+    --safety-btn-outline-text: #ffffff;
+    --safety-btn-outline-hover-bg: #2d2d2d;
+    --safety-btn-outline-hover-border: #e0e0e0;
+    --safety-btn-outline-hover-text: #e0e0e0;
+    --safety-card-bg: #2d2d2d;
+    --safety-card-border: #404040;
+    --safety-emergency-bg: #4a3f00;
+    --safety-emergency-border: #ffca2c;
+    --safety-emergency-text: #ffd54f;
+    --safety-contact-bg: #2d2d2d;
+    --safety-contact-border: #404040;
+    --safety-info-bg: #2d2d2d;
+    --safety-info-border: #404040;
+  }
+}
+
+.safety-issue-page {
+  padding: 40px 0;
+  background-color: var(--safety-bg);
+}
+
+.safety-issue-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--safety-text-primary);
+}
+
+.safety-issue-page .lead {
+  font-size: 1.25rem;
+  color: var(--safety-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.safety-issue-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--safety-text-primary);
+}
+
+.safety-issue-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--safety-text-primary);
+}
+
+.safety-issue-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--safety-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.safety-issue-page ul,
+.safety-issue-page ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.safety-issue-page li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--safety-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.safety-issue-page a {
+  color: var(--safety-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.safety-issue-page a:hover {
+  color: var(--safety-link-hover);
+}
+
+.emergency-banner {
+  background-color: var(--safety-emergency-bg);
+  border: 2px solid var(--safety-emergency-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.emergency-banner h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--safety-emergency-text);
+}
+
+.emergency-banner p {
+  color: var(--safety-emergency-text);
+  margin-bottom: 0.5rem;
+}
+
+.emergency-banner i {
+  margin-right: 0.5rem;
+}
+
+.safety-cards {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.safety-card {
+  background-color: var(--safety-card-bg);
+  border: 1px solid var(--safety-card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.safety-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.safety-card i {
+  margin-right: 0.5rem;
+  color: var(--safety-link);
+}
+
+.contact-methods {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  background-color: var(--safety-contact-bg);
+  border: 1px solid var(--safety-contact-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.contact-method h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.contact-method i {
+  margin-right: 0.5rem;
+  color: var(--safety-link);
+}
+
+.phone-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--safety-text-primary);
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  background-color: var(--safety-info-bg);
+  border: 1px solid var(--safety-info-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.sidebar-card {
+  background-color: var(--safety-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--safety-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--safety-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--safety-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--safety-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--safety-btn-primary-bg);
+  border-color: var(--safety-btn-primary-border);
+  color: var(--safety-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--safety-btn-primary-hover-bg);
+  border-color: var(--safety-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--safety-btn-outline-border);
+  color: var(--safety-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--safety-btn-outline-hover-bg);
+  border-color: var(--safety-btn-outline-hover-border);
+  color: var(--safety-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .safety-issue-page h1 {
+    font-size: 2rem;
+  }
+
+  .safety-issue-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .safety-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

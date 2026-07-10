@@ -1,0 +1,230 @@
+:root {
+  --company-bg: #ffffff;
+  --company-text-primary: #222222;
+  --company-text-secondary: #717171;
+  --company-link: #222222;
+  --company-link-hover: #000000;
+  --company-sidebar-bg: #f7f7f7;
+  --company-btn-primary-bg: #222222;
+  --company-btn-primary-border: #222222;
+  --company-btn-primary-text: #ffffff;
+  --company-btn-primary-hover-bg: #000000;
+  --company-btn-primary-hover-border: #000000;
+  --company-btn-outline-border: #222222;
+  --company-btn-outline-text: #222222;
+  --company-btn-outline-hover-bg: #f7f7f7;
+  --company-btn-outline-hover-border: #000000;
+  --company-btn-outline-hover-text: #000000;
+  --company-info-bg: #f7f7f7;
+  --company-info-border: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --company-bg: #1a1a1a;
+    --company-text-primary: #ffffff;
+    --company-text-secondary: #b3b3b3;
+    --company-link: #ffffff;
+    --company-link-hover: #e0e0e0;
+    --company-sidebar-bg: #2d2d2d;
+    --company-btn-primary-bg: #ffffff;
+    --company-btn-primary-border: #ffffff;
+    --company-btn-primary-text: #1a1a1a;
+    --company-btn-primary-hover-bg: #e0e0e0;
+    --company-btn-primary-hover-border: #e0e0e0;
+    --company-btn-outline-border: #ffffff;
+    --company-btn-outline-text: #ffffff;
+    --company-btn-outline-hover-bg: #2d2d2d;
+    --company-btn-outline-hover-border: #e0e0e0;
+    --company-btn-outline-hover-text: #e0e0e0;
+    --company-info-bg: #2d2d2d;
+    --company-info-border: #404040;
+  }
+}
+
+.company-details-page {
+  padding: 40px 0;
+  background-color: var(--company-bg);
+}
+
+.company-details-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--company-text-primary);
+}
+
+.company-details-page .lead {
+  font-size: 1.25rem;
+  color: var(--company-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.company-details-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--company-text-primary);
+}
+
+.company-details-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--company-text-primary);
+}
+
+.company-details-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--company-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.company-details-page ul,
+.company-details-page ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.company-details-page li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--company-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.company-details-page a {
+  color: var(--company-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.company-details-page a:hover {
+  color: var(--company-link-hover);
+}
+
+.company-details-page address {
+  font-style: normal;
+  color: var(--company-text-secondary);
+  line-height: 1.8;
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--company-link);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: var(--company-link-hover);
+}
+
+.info-card {
+  background-color: var(--company-info-bg);
+  border: 1px solid var(--company-info-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.info-card .btn {
+  margin-top: 1rem;
+}
+
+.sidebar-card {
+  background-color: var(--company-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--company-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--company-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--company-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--company-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--company-btn-primary-bg);
+  border-color: var(--company-btn-primary-border);
+  color: var(--company-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--company-btn-primary-hover-bg);
+  border-color: var(--company-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--company-btn-outline-border);
+  color: var(--company-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--company-btn-outline-hover-bg);
+  border-color: var(--company-btn-outline-hover-border);
+  color: var(--company-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .company-details-page h1 {
+    font-size: 2rem;
+  }
+
+  .company-details-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

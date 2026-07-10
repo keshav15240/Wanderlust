@@ -1,0 +1,288 @@
+:root {
+  --antidisc-bg: #ffffff;
+  --antidisc-text-primary: #222222;
+  --antidisc-text-secondary: #717171;
+  --antidisc-link: #222222;
+  --antidisc-link-hover: #000000;
+  --antidisc-sidebar-bg: #f7f7f7;
+  --antidisc-btn-primary-bg: #222222;
+  --antidisc-btn-primary-border: #222222;
+  --antidisc-btn-primary-text: #ffffff;
+  --antidisc-btn-primary-hover-bg: #000000;
+  --antidisc-btn-primary-hover-border: #000000;
+  --antidisc-btn-outline-border: #222222;
+  --antidisc-btn-outline-text: #222222;
+  --antidisc-btn-outline-hover-bg: #f7f7f7;
+  --antidisc-btn-outline-hover-border: #000000;
+  --antidisc-btn-outline-hover-text: #000000;
+  --antidisc-report-bg: #f7f7f7;
+  --antidisc-report-border: #e0e0e0;
+  --antidisc-report-hover-bg: #e8e8e8;
+  --antidisc-cta-bg: #f7f7f7;
+  --antidisc-cta-border: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --antidisc-bg: #1a1a1a;
+    --antidisc-text-primary: #ffffff;
+    --antidisc-text-secondary: #b3b3b3;
+    --antidisc-link: #ffffff;
+    --antidisc-link-hover: #e0e0e0;
+    --antidisc-sidebar-bg: #2d2d2d;
+    --antidisc-btn-primary-bg: #ffffff;
+    --antidisc-btn-primary-border: #ffffff;
+    --antidisc-btn-primary-text: #1a1a1a;
+    --antidisc-btn-primary-hover-bg: #e0e0e0;
+    --antidisc-btn-primary-hover-border: #e0e0e0;
+    --antidisc-btn-outline-border: #ffffff;
+    --antidisc-btn-outline-text: #ffffff;
+    --antidisc-btn-outline-hover-bg: #2d2d2d;
+    --antidisc-btn-outline-hover-border: #e0e0e0;
+    --antidisc-btn-outline-hover-text: #e0e0e0;
+    --antidisc-report-bg: #2d2d2d;
+    --antidisc-report-border: #404040;
+    --antidisc-report-hover-bg: #3d3d3d;
+    --antidisc-cta-bg: #2d2d2d;
+    --antidisc-cta-border: #404040;
+  }
+}
+
+.anti-discrimination-page {
+  padding: 40px 0;
+  background-color: var(--antidisc-bg);
+}
+
+.anti-discrimination-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--antidisc-text-primary);
+}
+
+.anti-discrimination-page .lead {
+  font-size: 1.25rem;
+  color: var(--antidisc-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.anti-discrimination-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--antidisc-text-primary);
+}
+
+.anti-discrimination-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--antidisc-text-primary);
+}
+
+.anti-discrimination-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--antidisc-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.anti-discrimination-page ul,
+.anti-discrimination-page ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.anti-discrimination-page li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--antidisc-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.anti-discrimination-page li strong {
+  color: var(--antidisc-text-primary);
+  font-weight: 600;
+}
+
+.anti-discrimination-page a {
+  color: var(--antidisc-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.anti-discrimination-page a:hover {
+  color: var(--antidisc-link-hover);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--antidisc-link);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: var(--antidisc-link-hover);
+}
+
+.report-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.report-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--antidisc-report-bg);
+  border: 1px solid var(--antidisc-report-border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.report-link:hover {
+  background-color: var(--antidisc-report-hover-bg);
+  border-color: var(--antidisc-link);
+  transform: translateX(4px);
+}
+
+.report-year {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--antidisc-text-primary);
+  background-color: var(--antidisc-link);
+  color: var(--antidisc-btn-primary-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.report-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--antidisc-text-primary);
+}
+
+.cta-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--antidisc-cta-bg);
+  border: 1px solid var(--antidisc-cta-border);
+  border-radius: 12px;
+}
+
+.cta-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.cta-section .btn {
+  margin-top: 1rem;
+}
+
+.sidebar-card {
+  background-color: var(--antidisc-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--antidisc-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--antidisc-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--antidisc-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--antidisc-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--antidisc-btn-primary-bg);
+  border-color: var(--antidisc-btn-primary-border);
+  color: var(--antidisc-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--antidisc-btn-primary-hover-bg);
+  border-color: var(--antidisc-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--antidisc-btn-outline-border);
+  color: var(--antidisc-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--antidisc-btn-outline-hover-bg);
+  border-color: var(--antidisc-btn-outline-hover-border);
+  color: var(--antidisc-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .anti-discrimination-page h1 {
+    font-size: 2rem;
+  }
+
+  .anti-discrimination-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .report-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .report-year {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,110 @@
+<%- layout("layouts/boilerplate") %>
+
+<div class="neighbourhood-concern-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Neighbourhood Support</h1>
+        <p class="lead">You can report a party, noise complaint or neighbourhood concern here.</p>
+        
+        <div class="info-box">
+          <h3><i class="fas fa-info-circle"></i> Important information</h3>
+          <p>For help with a reservation, hosting or your account, <a href="/helpcenter">contact Wanderlust Support</a> – our Neighbourhood Support team is only available to help with concerns related to home sharing in your community.</p>
+        </div>
+
+        <div class="emergency-banner">
+          <h2><i class="fas fa-exclamation-triangle"></i> For emergencies</h2>
+          <p>If you feel unsafe or are concerned about your or someone else's well-being, please contact local emergency services immediately.</p>
+          <p><strong>Dial:</strong> 911 (US/Canada), 112 (Europe), or your local emergency number</p>
+        </div>
+
+        <h2>Urgent neighbourhood situations</h2>
+        <p>Contact Neighbourhood Support if there's a party or disturbance happening nearby.</p>
+        
+        <div class="urgent-action">
+          <h3>Request a call</h3>
+          <p>Our team is available 24/7 to respond to urgent neighbourhood concerns.</p>
+          <a href="tel:+18554247262" class="btn btn-primary btn-lg">Request a call now</a>
+        </div>
+
+        <h2>Other neighbourhood concerns</h2>
+        <p>Send us a message using the button below. Our team will investigate and follow up via email.</p>
+        
+        <div class="report-form">
+          <h3>Report a concern</h3>
+          <form>
+            <div class="form-group">
+              <label for="concern-type">Type of concern</label>
+              <select class="form-control" id="concern-type">
+                <option value="">Select a concern type</option>
+                <option value="noise">Noise complaint</option>
+                <option value="party">Party or gathering</option>
+                <option value="parking">Parking issue</option>
+                <option value="trash">Trash or waste</option>
+                <option value="safety">Safety concern</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address of the property</label>
+              <input type="text" class="form-control" id="address" placeholder="Enter the address">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description of the concern</label>
+              <textarea class="form-control" id="description" rows="5" placeholder="Please describe the issue in detail"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your email (for follow-up)</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit report</button>
+          </form>
+        </div>
+
+        <h2>What we can help with</h2>
+        <ul>
+          <li><strong>Parties and disturbances:</strong> Excessive noise, large gatherings, or disruptive behavior</li>
+          <li><strong>Property concerns:</strong> Issues with the property that affect the neighborhood</li>
+          <li><strong>Illegal activities:</strong> Suspected illegal activities at a listing</li>
+          <li><strong>Safety hazards:</strong> Conditions that pose a safety risk to the community</li>
+        </ul>
+
+        <h2>What happens after you report</h2>
+        <ol>
+          <li>Our team reviews your report</li>
+          <li>We may contact the host to address the issue</li>
+          <li>We investigate and take appropriate action</li>
+          <li>We follow up with you via email</li>
+          <li>We may take action against the listing if necessary</li>
+        </ol>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar-card">
+          <h3>Related articles</h3>
+          <ul class="sidebar-links">
+            <li><a href="#">When a neighbour reports an issue</a></li>
+            <li><a href="#">What to know if your neighbour is a Wanderlust host</a></li>
+            <li><a href="#">Community Disturbance Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>For hosts</h3>
+          <p>Hosting comes with a commitment to neighbours and to the community.</p>
+          <a href="/hosting-responsibly" class="btn btn-outline-primary btn-block">Hosting responsibly</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Community guidelines</h3>
+          <p>Learn about our policies and expectations for hosts and guests in the community.</p>
+          <a href="/anti-discrimination" class="btn btn-outline-primary btn-block">Community guidelines</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

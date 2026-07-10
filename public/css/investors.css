@@ -1,0 +1,300 @@
+:root {
+  --investors-bg: #ffffff;
+  --investors-text-primary: #222222;
+  --investors-text-secondary: #717171;
+  --investors-link: #222222;
+  --investors-link-hover: #000000;
+  --investors-sidebar-bg: #f7f7f7;
+  --investors-btn-primary-bg: #222222;
+  --investors-btn-primary-border: #222222;
+  --investors-btn-primary-text: #ffffff;
+  --investors-btn-primary-hover-bg: #000000;
+  --investors-btn-primary-hover-border: #000000;
+  --investors-btn-outline-border: #222222;
+  --investors-btn-outline-text: #222222;
+  --investors-btn-outline-hover-bg: #f7f7f7;
+  --investors-btn-outline-hover-border: #000000;
+  --investors-btn-outline-hover-text: #000000;
+  --investors-report-bg: #ffffff;
+  --investors-report-border: #e0e0e0;
+  --investors-report-hover-bg: #f9f9f9;
+  --investors-stock-bg: #f7f7f7;
+  --investors-stock-border: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --investors-bg: #1a1a1a;
+    --investors-text-primary: #ffffff;
+    --investors-text-secondary: #b3b3b3;
+    --investors-link: #ffffff;
+    --investors-link-hover: #e0e0e0;
+    --investors-sidebar-bg: #2d2d2d;
+    --investors-btn-primary-bg: #ffffff;
+    --investors-btn-primary-border: #ffffff;
+    --investors-btn-primary-text: #1a1a1a;
+    --investors-btn-primary-hover-bg: #e0e0e0;
+    --investors-btn-primary-hover-border: #e0e0e0;
+    --investors-btn-outline-border: #ffffff;
+    --investors-btn-outline-text: #ffffff;
+    --investors-btn-outline-hover-bg: #2d2d2d;
+    --investors-btn-outline-hover-border: #e0e0e0;
+    --investors-btn-outline-hover-text: #e0e0e0;
+    --investors-report-bg: #2d2d2d;
+    --investors-report-border: #404040;
+    --investors-report-hover-bg: #3d3d3d;
+    --investors-stock-bg: #2d2d2d;
+    --investors-stock-border: #404040;
+  }
+}
+
+.investors-page {
+  padding: 40px 0;
+  background-color: var(--investors-bg);
+}
+
+.investors-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--investors-text-primary);
+}
+
+.investors-page .lead {
+  font-size: 1.25rem;
+  color: var(--investors-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.investors-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--investors-text-primary);
+}
+
+.investors-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--investors-text-primary);
+}
+
+.investors-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--investors-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.investors-page a {
+  color: var(--investors-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.investors-page a:hover {
+  color: var(--investors-link-hover);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--investors-link);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: var(--investors-link-hover);
+}
+
+.financial-reports {
+  margin-bottom: 2rem;
+}
+
+.report-card {
+  background-color: var(--investors-report-bg);
+  border: 1px solid var(--investors-report-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  background-color: var(--investors-report-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.report-date {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--investors-text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.report-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.presentations {
+  margin-bottom: 2rem;
+}
+
+.presentation-item {
+  background-color: var(--investors-report-bg);
+  border: 1px solid var(--investors-report-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.presentation-item:hover {
+  background-color: var(--investors-report-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.presentation-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.stock-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stock-metric {
+  background-color: var(--investors-stock-bg);
+  border: 1px solid var(--investors-stock-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stock-metric h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--investors-text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stock-metric p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--investors-text-primary);
+  margin-bottom: 0;
+}
+
+.sidebar-card {
+  background-color: var(--investors-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--investors-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--investors-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--investors-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--investors-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--investors-btn-primary-bg);
+  border-color: var(--investors-btn-primary-border);
+  color: var(--investors-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--investors-btn-primary-hover-bg);
+  border-color: var(--investors-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--investors-btn-outline-border);
+  color: var(--investors-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--investors-btn-outline-hover-bg);
+  border-color: var(--investors-btn-outline-hover-border);
+  color: var(--investors-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .investors-page h1 {
+    font-size: 2rem;
+  }
+
+  .investors-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .stock-info {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .stock-metric {
+    padding: 1rem;
+  }
+
+  .stock-metric p {
+    font-size: 1.25rem;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

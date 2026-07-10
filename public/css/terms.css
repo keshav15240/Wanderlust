@@ -1,0 +1,203 @@
+:root {
+  --terms-bg: #ffffff;
+  --terms-text-primary: #222222;
+  --terms-text-secondary: #717171;
+  --terms-link: #222222;
+  --terms-link-hover: #000000;
+  --terms-sidebar-bg: #f7f7f7;
+  --terms-btn-primary-bg: #222222;
+  --terms-btn-primary-border: #222222;
+  --terms-btn-primary-text: #ffffff;
+  --terms-btn-primary-hover-bg: #000000;
+  --terms-btn-primary-hover-border: #000000;
+  --terms-btn-outline-border: #222222;
+  --terms-btn-outline-text: #222222;
+  --terms-btn-outline-hover-bg: #f7f7f7;
+  --terms-btn-outline-hover-border: #000000;
+  --terms-btn-outline-hover-text: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --terms-bg: #1a1a1a;
+    --terms-text-primary: #ffffff;
+    --terms-text-secondary: #b3b3b3;
+    --terms-link: #ffffff;
+    --terms-link-hover: #e0e0e0;
+    --terms-sidebar-bg: #2d2d2d;
+    --terms-btn-primary-bg: #ffffff;
+    --terms-btn-primary-border: #ffffff;
+    --terms-btn-primary-text: #1a1a1a;
+    --terms-btn-primary-hover-bg: #e0e0e0;
+    --terms-btn-primary-hover-border: #e0e0e0;
+    --terms-btn-outline-border: #ffffff;
+    --terms-btn-outline-text: #ffffff;
+    --terms-btn-outline-hover-bg: #2d2d2d;
+    --terms-btn-outline-hover-border: #e0e0e0;
+    --terms-btn-outline-hover-text: #e0e0e0;
+  }
+}
+
+.terms-page {
+  padding: 40px 0;
+  background-color: var(--terms-bg);
+}
+
+.terms-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--terms-text-primary);
+}
+
+.terms-page .lead {
+  font-size: 1.25rem;
+  color: var(--terms-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.terms-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--terms-text-primary);
+}
+
+.terms-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--terms-text-primary);
+}
+
+.terms-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--terms-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.terms-page ul,
+.terms-page ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.terms-page li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--terms-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.terms-page a {
+  color: var(--terms-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.terms-page a:hover {
+  color: var(--terms-link-hover);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--terms-link);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: var(--terms-link-hover);
+}
+
+.sidebar-card {
+  background-color: var(--terms-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--terms-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--terms-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--terms-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--terms-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--terms-btn-primary-bg);
+  border-color: var(--terms-btn-primary-border);
+  color: var(--terms-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--terms-btn-primary-hover-bg);
+  border-color: var(--terms-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--terms-btn-outline-border);
+  color: var(--terms-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--terms-btn-outline-hover-bg);
+  border-color: var(--terms-btn-outline-hover-border);
+  color: var(--terms-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .terms-page h1 {
+    font-size: 2rem;
+  }
+
+  .terms-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

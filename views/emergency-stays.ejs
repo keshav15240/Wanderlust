@@ -1,11 +1,139 @@
-<%- include("includes/head.ejs") %>
-<%- include("includes/header.ejs") %>
+<%- layout("layouts/boilerplate") %>
 
-<main class="main-content">
+<div class="emergency-stays-page">
   <div class="container">
-    <h1>Emergency stays</h1>
-    <p>Emergency housing and accommodation for those in need.</p>
-  </div>
-</main>
+    <div class="hero-section">
+      <h1>Emergency Stays</h1>
+      <p class="lead">Free temporary housing for people in crisis</p>
+      <p>Wanderlust provides emergency accommodation for those affected by natural disasters, conflicts, or other urgent situations. Our hosts open their homes to help when it matters most.</p>
+      <div class="cta-buttons">
+        <a href="/emergency-stays/request" class="btn btn-primary btn-lg">Request Emergency Stay</a>
+        <a href="/emergency-stays/host" class="btn btn-outline-primary btn-lg">Offer Your Home</a>
+      </div>
+    </div>
 
-<%- include("includes/footer.ejs") %>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>What are Emergency Stays?</h2>
+        <p>Emergency Stays is a program that connects people in urgent need of housing with hosts who are willing to provide free temporary accommodation. This initiative helps during natural disasters, conflicts, refugee crises, and other emergency situations.</p>
+
+        <h2>Who Can Request Emergency Stays?</h2>
+        <ul>
+          <li>People displaced by natural disasters (fires, floods, earthquakes, hurricanes)</li>
+          <li>Refugees and asylum seekers fleeing conflict or persecution</li>
+          <li>Families facing sudden homelessness due to crisis</li>
+          <li>Medical patients and families needing accommodation near treatment centers</li>
+          <li>Individuals approved by our partner organizations</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Submit a Request</h3>
+            <p>Fill out our emergency stay request form with your situation and needs.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Verification</h3>
+            <p>Our team verifies your request with partner organizations when needed.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Matching</h3>
+            <p>We match you with available hosts in your area or nearby safe locations.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>Accommodation</h3>
+            <p>Stay with your host for the agreed duration at no cost to you.</p>
+          </div>
+        </div>
+
+        <h2>For Hosts: Open Your Home</h2>
+        <p>Become an emergency host and provide safe temporary housing to those in need. Your generosity can make a life-changing difference for families and individuals facing crisis.</p>
+
+        <div class="host-benefits">
+          <div class="benefit-item">
+            <h3><i class="fas fa-heart"></i> Make a Real Impact</h3>
+            <p>Provide life-saving shelter to people when they need it most.</p>
+          </div>
+          <div class="benefit-item">
+            <h3><i class="fas fa-shield-alt"></i> Full Protection</h3>
+            <p>Emergency hosts receive enhanced AirCover protection and support.</p>
+          </div>
+          <div class="benefit-item">
+            <h3><i class="fas fa-users"></i> Join a Community</h3>
+            <p>Connect with other compassionate hosts making a difference.</p>
+          </div>
+          <div class="benefit-item">
+            <h3><i class="fas fa-calendar-check"></i> Flexible Commitment</h3>
+            <p>Choose when and how often you can host based on your availability.</p>
+          </div>
+        </div>
+
+        <h2>Partner Organizations</h2>
+        <p>We work with trusted humanitarian organizations, government agencies, and NGOs to identify and verify emergency stay requests:</p>
+        <ul>
+          <li>Red Cross and Red Crescent societies</li>
+          <li>UN Refugee Agency (UNHCR)</li>
+          <li>Local disaster relief organizations</li>
+          <li>Medical institutions and hospitals</li>
+          <li>Government emergency services</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+          <div class="faq-item">
+            <h3>Is emergency accommodation really free?</h3>
+            <p>Yes, emergency stays are completely free for guests. Hosts volunteer their homes, and Wanderlust waives all fees for emergency bookings.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How long can I stay?</h3>
+            <p>Emergency stays typically range from a few days to several weeks, depending on the situation and host availability. Extensions can be requested if needed.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if I have special needs?</h3>
+            <p>Please include any special requirements in your request form, such as accessibility needs, dietary restrictions, or medical requirements. We'll do our best to match you with suitable hosts.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Are emergency hosts vetted?</h3>
+            <p>Yes, all emergency hosts undergo additional verification and background checks. They also receive special training and support.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar-card">
+          <h3>Quick actions</h3>
+          <ul class="sidebar-links">
+            <li><a href="/emergency-stays/request">Request Emergency Stay</a></li>
+            <li><a href="/emergency-stays/host">Become an Emergency Host</a></li>
+            <li><a href="/emergency-stays/status">Check Request Status</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Need immediate help?</h3>
+          <p>If you are in immediate danger, please contact local emergency services first.</p>
+          <a href="tel:911" class="btn btn-primary btn-block">Call Emergency Services</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Partner with us</h3>
+          <p>Organizations interested in partnering with our Emergency Stays program can learn more here.</p>
+          <a href="/emergency-stays/partners" class="btn btn-outline-primary btn-block">Partner Information</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Related resources</h3>
+          <ul class="sidebar-links">
+            <li><a href="/helpcenter">Help Center</a></li>
+            <li><a href="/safety-issue">Report Safety Issue</a></li>
+            <li><a href="/community-forum">Community Forum</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,121 @@
-<%- include("includes/head.ejs") %>
-<%- include("includes/header.ejs") %>
+<%- layout("layouts/boilerplate") %>
 
-<main class="main-content">
+<div class="investors-page">
   <div class="container">
-    <h1>Investors</h1>
-    <p>Investor relations, financial reports, and company information.</p>
-  </div>
-</main>
+    <div class="hero-section">
+      <h1>Investor Relations</h1>
+      <p class="lead">Financial information, corporate governance, and shareholder resources</p>
+      <p>Access our latest financial reports, corporate presentations, and investor materials.</p>
+    </div>
 
-<%- include("includes/footer.ejs") %>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Latest Financial Results</h2>
+        <div class="financial-reports">
+          <div class="report-card">
+            <div class="report-date">Q2 2026</div>
+            <h3>Second Quarter 2026 Financial Results</h3>
+            <p>Strong revenue growth driven by increased bookings and expansion into new markets.</p>
+            <a href="/investors/q2-2026-results" class="btn-link">View report →</a>
+          </div>
+
+          <div class="report-card">
+            <div class="report-date">Q1 2026</div>
+            <h3>First Quarter 2026 Financial Results</h3>
+            <p>Record bookings as travel demand continues to recover globally.</p>
+            <a href="/investors/q1-2026-results" class="btn-link">View report →</a>
+          </div>
+
+          <div class="report-card">
+            <div class="report-date">Q4 2025</div>
+            <h3>Fourth Quarter 2025 Financial Results</h3>
+            <p>Year-end results show strong growth and profitability improvements.</p>
+            <a href="/investors/q4-2025-results" class="btn-link">View report →</a>
+          </div>
+        </div>
+
+        <h2>Corporate Presentations</h2>
+        <div class="presentations">
+          <div class="presentation-item">
+            <h3>Summer 2026 Investor Presentation</h3>
+            <p>Overview of company strategy, growth initiatives, and financial outlook.</p>
+            <a href="/investors/presentation-summer-2026" class="btn-link">Download presentation →</a>
+          </div>
+
+          <div class="presentation-item">
+            <h3>Annual Shareholder Meeting 2026</h3>
+            <p>Materials from our annual shareholder meeting including CEO address.</p>
+            <a href="/investors/shareholder-meeting-2026" class="btn-link">View materials →</a>
+          </div>
+        </div>
+
+        <h2>Stock Information</h2>
+        <div class="stock-info">
+          <div class="stock-metric">
+            <h3>Ticker Symbol</h3>
+            <p>WLST (NASDAQ)</p>
+          </div>
+          <div class="stock-metric">
+            <h3>Current Price</h3>
+            <p>$142.50</p>
+          </div>
+          <div class="stock-metric">
+            <h3>Market Cap</h3>
+            <p>$85.2B</p>
+          </div>
+          <div class="stock-metric">
+            <h3>52-Week Range</h3>
+            <p>$98.00 - $156.00</p>
+          </div>
+        </div>
+
+        <h2>Corporate Governance</h2>
+        <p>Wanderlust is committed to maintaining high standards of corporate governance and transparency. Our board of directors and management team are dedicated to creating long-term value for shareholders.</p>
+        <ul>
+          <li><a href="/investors/board-of-directors" class="btn-link">Board of Directors →</a></li>
+          <li><a href="/investors/corporate-governance" class="btn-link">Corporate Governance Guidelines →</a></li>
+          <li><a href="/investors/committee-charters" class="btn-link">Board Committee Charters →</a></li>
+          <li><a href="/investors/code-of-ethics" class="btn-link">Code of Business Conduct →</a></li>
+        </ul>
+
+        <h2>SEC Filings</h2>
+        <p>Access our official SEC filings including annual reports (10-K), quarterly reports (10-Q), and current reports (8-K).</p>
+        <a href="/investors/sec-filings" class="btn btn-primary">View SEC Filings</a>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar-card">
+          <h3>Quick links</h3>
+          <ul class="sidebar-links">
+            <li><a href="/investors/financial-reports">Financial Reports</a></li>
+            <li><a href="/investors/sec-filings">SEC Filings</a></li>
+            <li><a href="/investors/press-releases">Press Releases</a></li>
+            <li><a href="/investors/events">Events & Presentations</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Investor contacts</h3>
+          <p>For investor inquiries, please contact our investor relations team.</p>
+          <p><strong>Email:</strong> <a href="mailto:investors@wanderlust.com" class="btn-link">investors@wanderlust.com</a></p>
+          <p><strong>Phone:</strong> +91-123-456-7890</p>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Email alerts</h3>
+          <p>Sign up to receive email notifications about financial results and investor news.</p>
+          <a href="/investors/email-alerts" class="btn btn-outline-primary btn-block">Sign Up for Alerts</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Company information</h3>
+          <ul class="sidebar-links">
+            <li><a href="/company-details">Company Details</a></li>
+            <li><a href="/newsroom">Newsroom</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

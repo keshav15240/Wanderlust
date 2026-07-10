@@ -1,11 +1,176 @@
-<%- include("includes/head.ejs") %>
-<%- include("includes/header.ejs") %>
+<%- layout("layouts/boilerplate") %>
 
-<main class="main-content">
+<div class="careers-page">
   <div class="container">
-    <h1>Careers</h1>
-    <p>Join our team and help build the future of travel.</p>
-  </div>
-</main>
+    <div class="hero-section">
+      <h1>Careers at Wanderlust</h1>
+      <p class="lead">Join our team and help build the future of travel</p>
+      <p>We're looking for passionate people who want to make a difference in the world of travel and hospitality.</p>
+      <div class="cta-buttons">
+        <a href="/careers/openings" class="btn btn-primary btn-lg">View Open Positions</a>
+        <a href="/careers/life" class="btn btn-outline-primary btn-lg">Life at Wanderlust</a>
+      </div>
+    </div>
 
-<%- include("includes/footer.ejs") %>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Why Work at Wanderlust</h2>
+        
+        <div class="benefits-section">
+          <div class="benefit-card">
+            <h3><i class="fas fa-globe"></i> Global Impact</h3>
+            <p>Help millions of people around the world experience travel in new and meaningful ways. Your work will touch lives across continents.</p>
+          </div>
+          <div class="benefit-card">
+            <h3><i class="fas fa-rocket"></i> Innovation</h3>
+            <p>Work with cutting-edge technology and solve complex problems at scale. We're constantly pushing the boundaries of what's possible.</p>
+          </div>
+          <div class="benefit-card">
+            <h3><i class="fas fa-users"></i> Amazing Team</h3>
+            <p>Collaborate with talented, passionate people from diverse backgrounds. Learn from the best and grow together.</p>
+          </div>
+          <div class="benefit-card">
+            <h3><i class="fas fa-heart"></i> Mission-Driven</h3>
+            <p>Join a company with a clear purpose: to create a world where anyone can belong anywhere. Your work matters.</p>
+          </div>
+        </div>
+
+        <h2>Benefits & Perks</h2>
+        <ul>
+          <li>Competitive salary and equity packages</li>
+          <li>Comprehensive health, dental, and vision insurance</li>
+          <li>Flexible work arrangements and remote options</li>
+          <li>Generous paid time off and parental leave</li>
+          <li>Annual travel credit for Wanderlust stays</li>
+          <li>Professional development and learning budget</li>
+          <li>Employee stock purchase plan</li>
+          <li>Free meals and snacks in the office</li>
+          <li>Wellness programs and gym membership</li>
+          <li>Retirement savings plan with company match</li>
+        </ul>
+
+        <h2>Open Positions</h2>
+        <div class="job-categories">
+          <div class="job-category">
+            <h3>Engineering</h3>
+            <ul>
+              <li><a href="/careers/jobs/senior-frontend-engineer" class="btn-link">Senior Frontend Engineer →</a></li>
+              <li><a href="/careers/jobs/backend-engineer" class="btn-link">Backend Engineer →</a></li>
+              <li><a href="/careers/jobs/full-stack-developer" class="btn-link">Full Stack Developer →</a></li>
+              <li><a href="/careers/jobs/mobile-engineer" class="btn-link">Mobile Engineer (iOS/Android) →</a></li>
+              <li><a href="/careers/jobs/data-engineer" class="btn-link">Data Engineer →</a></li>
+            </ul>
+          </div>
+
+          <div class="job-category">
+            <h3>Product & Design</h3>
+            <ul>
+              <li><a href="/careers/jobs/product-manager" class="btn-link">Product Manager →</a></li>
+              <li><a href="/careers/jobs/senior-product-designer" class="btn-link">Senior Product Designer →</a></li>
+              <li><a href="/careers/jobs/ux-researcher" class="btn-link">UX Researcher →</a></li>
+              <li><a href="/careers/jobs/content-designer" class="btn-link">Content Designer →</a></li>
+            </ul>
+          </div>
+
+          <div class="job-category">
+            <h3>Data & Analytics</h3>
+            <ul>
+              <li><a href="/careers/jobs/data-scientist" class="btn-link">Data Scientist →</a></li>
+              <li><a href="/careers/jobs/business-analyst" class="btn-link">Business Analyst →</a></li>
+              <li><a href="/careers/jobs/analytics-engineer" class="btn-link">Analytics Engineer →</a></li>
+            </ul>
+          </div>
+
+          <div class="job-category">
+            <h3>Marketing & Growth</h3>
+            <ul>
+              <li><a href="/careers/jobs/growth-marketing-manager" class="btn-link">Growth Marketing Manager →</a></li>
+              <li><a href="/careers/jobs/content-marketer" class="btn-link">Content Marketer →</a></li>
+              <li><a href="/careers/jobs/social-media-manager" class="btn-link">Social Media Manager →</a></li>
+              <li><a href="/careers/jobs/brand-manager" class="btn-link">Brand Manager →</a></li>
+            </ul>
+          </div>
+
+          <div class="job-category">
+            <h3>Operations & Support</h3>
+            <ul>
+              <li><a href="/careers/jobs/customer-support-specialist" class="btn-link">Customer Support Specialist →</a></li>
+              <li><a href="/careers/jobs/operations-manager" class="btn-link">Operations Manager →</a></li>
+              <li><a href="/careers/jobs/trust-and-safety-analyst" class="btn-link">Trust and Safety Analyst →</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Our Hiring Process</h2>
+        <div class="hiring-process">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Apply Online</h3>
+            <p>Submit your application through our careers portal. Include your resume and a brief cover letter.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Initial Screening</h3>
+            <p>Our recruiting team will review your application and reach out if there's a potential match.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Technical Interview</h3>
+            <p>Meet with the hiring team to discuss your skills and experience through interviews and assessments.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>Culture Fit</h3>
+            <p>Meet with team members to ensure alignment with our values and working style.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3>Offer</h3>
+            <p>If all goes well, we'll extend an offer and welcome you to the team!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar-card">
+          <h3>Quick links</h3>
+          <ul class="sidebar-links">
+            <li><a href="/careers/openings">All Open Positions</a></li>
+            <li><a href="/careers/engineering">Engineering Jobs</a></li>
+            <li><a href="/careers/product">Product & Design</a></li>
+            <li><a href="/careers/internships">Internships</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Life at Wanderlust</h3>
+          <p>Discover what it's like to work here from our team members.</p>
+          <a href="/careers/life" class="btn btn-outline-primary btn-block">Learn More</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Diversity & Inclusion</h3>
+          <p>We're committed to building a diverse and inclusive workplace where everyone can thrive.</p>
+          <a href="/careers/diversity" class="btn btn-outline-primary btn-block">Our Commitment</a>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Locations</h3>
+          <ul class="sidebar-links">
+            <li><a href="/careers/locations/punjab">Punjab, India (HQ)</a></li>
+            <li><a href="/careers/locations/delhi">Delhi, India</a></li>
+            <li><a href="/careers/locations/mumbai">Mumbai, India</a></li>
+            <li><a href="/careers/locations/bangalore">Bangalore, India</a></li>
+            <li><a href="/careers/locations/remote">Remote</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Students & Grads</h3>
+          <p>Start your career with our internship and new graduate programs.</p>
+          <a href="/careers/students" class="btn btn-primary btn-block">Student Programs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

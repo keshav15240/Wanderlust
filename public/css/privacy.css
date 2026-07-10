@@ -1,0 +1,203 @@
+:root {
+  --privacy-bg: #ffffff;
+  --privacy-text-primary: #222222;
+  --privacy-text-secondary: #717171;
+  --privacy-link: #222222;
+  --privacy-link-hover: #000000;
+  --privacy-sidebar-bg: #f7f7f7;
+  --privacy-btn-primary-bg: #222222;
+  --privacy-btn-primary-border: #222222;
+  --privacy-btn-primary-text: #ffffff;
+  --privacy-btn-primary-hover-bg: #000000;
+  --privacy-btn-primary-hover-border: #000000;
+  --privacy-btn-outline-border: #222222;
+  --privacy-btn-outline-text: #222222;
+  --privacy-btn-outline-hover-bg: #f7f7f7;
+  --privacy-btn-outline-hover-border: #000000;
+  --privacy-btn-outline-hover-text: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --privacy-bg: #1a1a1a;
+    --privacy-text-primary: #ffffff;
+    --privacy-text-secondary: #b3b3b3;
+    --privacy-link: #ffffff;
+    --privacy-link-hover: #e0e0e0;
+    --privacy-sidebar-bg: #2d2d2d;
+    --privacy-btn-primary-bg: #ffffff;
+    --privacy-btn-primary-border: #ffffff;
+    --privacy-btn-primary-text: #1a1a1a;
+    --privacy-btn-primary-hover-bg: #e0e0e0;
+    --privacy-btn-primary-hover-border: #e0e0e0;
+    --privacy-btn-outline-border: #ffffff;
+    --privacy-btn-outline-text: #ffffff;
+    --privacy-btn-outline-hover-bg: #2d2d2d;
+    --privacy-btn-outline-hover-border: #e0e0e0;
+    --privacy-btn-outline-hover-text: #e0e0e0;
+  }
+}
+
+.privacy-page {
+  padding: 40px 0;
+  background-color: var(--privacy-bg);
+}
+
+.privacy-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--privacy-text-primary);
+}
+
+.privacy-page .lead {
+  font-size: 1.25rem;
+  color: var(--privacy-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.privacy-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--privacy-text-primary);
+}
+
+.privacy-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--privacy-text-primary);
+}
+
+.privacy-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--privacy-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.privacy-page ul,
+.privacy-page ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.privacy-page li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--privacy-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.privacy-page a {
+  color: var(--privacy-link);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.privacy-page a:hover {
+  color: var(--privacy-link-hover);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--privacy-link);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: var(--privacy-link-hover);
+}
+
+.sidebar-card {
+  background-color: var(--privacy-sidebar-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--privacy-text-primary);
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--privacy-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--privacy-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  color: var(--privacy-link-hover);
+  text-decoration: underline;
+}
+
+.sidebar-card .btn {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.sidebar-card .btn-primary {
+  background-color: var(--privacy-btn-primary-bg);
+  border-color: var(--privacy-btn-primary-border);
+  color: var(--privacy-btn-primary-text);
+}
+
+.sidebar-card .btn-primary:hover {
+  background-color: var(--privacy-btn-primary-hover-bg);
+  border-color: var(--privacy-btn-primary-hover-border);
+}
+
+.sidebar-card .btn-outline-primary {
+  border-color: var(--privacy-btn-outline-border);
+  color: var(--privacy-btn-outline-text);
+}
+
+.sidebar-card .btn-outline-primary:hover {
+  background-color: var(--privacy-btn-outline-hover-bg);
+  border-color: var(--privacy-btn-outline-hover-border);
+  color: var(--privacy-btn-outline-hover-text);
+}
+
+@media (max-width: 768px) {
+  .privacy-page h1 {
+    font-size: 2rem;
+  }
+
+  .privacy-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}

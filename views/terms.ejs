@@ -1,11 +1,75 @@
-<%- include("includes/head.ejs") %>
-<%- include("includes/header.ejs") %>
+<%- layout("layouts/boilerplate") %>
 
-<main class="main-content">
+<div class="terms-page">
   <div class="container">
-    <h1>Terms of Service</h1>
-    <p>Our terms and conditions for using Wanderlust.</p>
-  </div>
-</main>
+    <div class="hero-section">
+      <h1>Terms of Service</h1>
+      <p class="lead">Last updated: July 10, 2026</p>
+      <p>Welcome to Wanderlust. Please read these terms carefully before using our platform.</p>
+    </div>
 
-<%- include("includes/footer.ejs") %>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using Wanderlust, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using our platform.</p>
+
+        <h2>2. User Accounts</h2>
+        <p>You are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account or password. Wanderlust reserves the right to refuse service, terminate accounts, or remove or edit content at our sole discretion.</p>
+
+        <h2>3. Booking and Payments</h2>
+        <p>All bookings made through Wanderlust are subject to availability and confirmation. Payment processing is handled securely through our platform. Cancellations and refunds are governed by our cancellation policy.</p>
+
+        <h2>4. Host Responsibilities</h2>
+        <p>Hosts must accurately describe their listings, maintain clean and safe accommodations, and honor confirmed bookings. Hosts are responsible for complying with all local laws and regulations regarding short-term rentals.</p>
+
+        <h2>5. Guest Responsibilities</h2>
+        <p>Guests must respect the property and house rules, communicate with hosts, and leave the accommodation in good condition. Guests are responsible for any damages they cause during their stay.</p>
+
+        <h2>6. Prohibited Activities</h2>
+        <ul>
+          <li>Using the platform for illegal purposes</li>
+          <li>Harassing, abusing, or harming other users</li>
+          <li>Posting false or misleading information</li>
+          <li>Attempting to gain unauthorized access to our systems</li>
+          <li>Violating any applicable laws or regulations</li>
+        </ul>
+
+        <h2>7. Intellectual Property</h2>
+        <p>All content on Wanderlust, including text, graphics, logos, and software, is owned by Wanderlust or its licensors and is protected by intellectual property laws. You may not use our content without prior written consent.</p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>Wanderlust shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our platform. Our total liability is limited to the amount you paid for our services.</p>
+
+        <h2>9. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless Wanderlust, its affiliates, and their respective officers, directors, and employees from any claims arising from your use of our platform or violation of these terms.</p>
+
+        <h2>10. Termination</h2>
+        <p>Wanderlust reserves the right to terminate or suspend your account at any time, with or without cause, with or without notice.</p>
+
+        <h2>11. Governing Law</h2>
+        <p>These terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+
+        <h2>12. Changes to Terms</h2>
+        <p>Wanderlust reserves the right to modify these terms at any time. We will notify users of significant changes via email or through our platform.</p>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="sidebar-card">
+          <h3>Related policies</h3>
+          <ul class="sidebar-links">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/anti-discrimination">Nondiscrimination Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+            <li><a href="/accessibility">Accessibility Statement</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card mt-4">
+          <h3>Need help?</h3>
+          <p>If you have questions about these terms, please contact our support team.</p>
+          <a href="/helpcenter" class="btn btn-outline-primary btn-block">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

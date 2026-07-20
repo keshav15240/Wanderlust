@@ -1,167 +1,256 @@
-## 🌐 Live Demo
+# 🏡 Wanderlust
 
-🔗 Live Application: https://wanderlust-lc72.onrender.com
-
-📂 Source Code: https://github.com/keshav15240/Wanderlust
-
-
-# Wanderlust – Full-Stack Vacation Rental Platform
-
-## Overview
-
-**Wanderlust** is a full-stack vacation rental platform inspired by Airbnb, developed using the MERN ecosystem to provide a modern, secure, and scalable property rental experience. The application enables users to discover unique accommodations, publish and manage property listings, upload high-quality images, share reviews, and securely authenticate through an intuitive web interface.
-
-Designed with a focus on **software engineering best practices**, the project follows the **Model–View–Controller (MVC)** architectural pattern and implements **RESTful** principles to ensure modularity, maintainability, and scalability. The backend is powered by **Node.js** and **Express.js**, while **MongoDB** serves as the primary database for efficient data persistence. Authentication and session management are handled using **Passport.js**, and **Cloudinary** is integrated for optimized cloud-based image storage and delivery.
-
-The project demonstrates practical implementation of modern backend development concepts including authentication and authorization, CRUD operations, middleware architecture, session management, data validation, cloud integration, and scalable application design.
+A full-stack Airbnb-inspired web application where users can discover, create, edit, and review travel listings. Built using the MERN ecosystem with authentication, image uploads, cloud storage, and automated end-to-end testing using Playwright.
 
 ---
 
-# Features
+## 🚀 Live Demo
 
-### User Authentication & Authorization
-- Secure user registration and login using Passport.js
-- Session-based authentication with Express Session
-- Protected routes and authorization middleware
-- Flash messaging for authentication and application feedback
-
-### Property Listing Management
-- Create, update, edit, and delete property listings
-- Upload and manage listing images through Cloudinary
-- Store property information with MongoDB and Mongoose
-- Display listings with responsive and user-friendly layouts
-
-### Reviews & User Interaction
-- Add and manage reviews for individual properties
-- Rating system for user feedback
-- Restrict review modifications to authorized users
-- Dynamic rendering of user-generated content
-
-### Backend Architecture
-- RESTful routing following industry standards
-- MVC architecture for separation of concerns
-- Modular controllers, models, routes, and middleware
-- Centralized error handling and validation
-- Clean and maintainable codebase
-
-### Data Management
-- MongoDB database integration using Mongoose ODM
-- Efficient schema design and data relationships
-- Server-side validation for improved data integrity
-- CRUD operations across multiple resources
-
-### Cloud Integration
-- Cloudinary for secure cloud image storage
-- Multer for image upload handling
-- Optimized media delivery
-
-### User Experience
-- Responsive interface built with Bootstrap
-- Server-side rendering using EJS templates
-- Interactive property browsing experience
-- Consistent UI components and layouts
+🔗 https://wanderlust-lc72.onrender.com
 
 ---
 
-# Technology Stack
+## 📸 Screenshots
 
-## Frontend
-- HTML5
-- CSS3
+> Add screenshots of:
+- Home Page
+- Listing Details
+- Create Listing
+- Login Page
+- Review Section
+
+Example:
+
+```
+assets/
+├── home.png
+├── listing.png
+├── login.png
+└── create-listing.png
+```
+
+---
+
+# ✨ Features
+
+- User Authentication (Signup/Login/Logout)
+- Create, Edit and Delete Listings
+- Upload Images using Cloudinary
+- Interactive Listing Details
+- Review & Rating System
+- Flash Messages
+- Responsive UI
+- Server-side Validation
+- Session Management
+- MongoDB Database
+- Automated End-to-End Testing using Playwright
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- HTML
+- CSS
 - Bootstrap
-- JavaScript (ES6+)
 - EJS
+- JavaScript
 
-## Backend
+### Backend
+
 - Node.js
 - Express.js
 
-## Database
+### Database
+
 - MongoDB
 - Mongoose
 
-## Authentication & Security
+### Authentication
+
 - Passport.js
 - Express Session
-- Connect Flash
 
-## Cloud Services
+### Image Storage
+
 - Cloudinary
 - Multer
-- Multer Storage Cloudinary
 
-## Development Tools
-- Git
-- GitHub
-- Render
-- VS Code
+### Testing
+
+- Playwright
+- TypeScript
 
 ---
 
-# Software Architecture
+# 📂 Project Structure
 
-The application follows the **Model–View–Controller (MVC)** architecture to ensure scalability and maintainability.
-
-- **Models** manage application data and database interactions.
-- **Views** render dynamic user interfaces using EJS.
-- **Controllers** contain business logic and coordinate requests.
-- **Routes** expose RESTful endpoints for application functionality.
-- **Middleware** handles authentication, authorization, validation, and centralized error management.
-
-
-# Key Highlights
-
-- Designed and implemented a scalable full-stack web application using the MERN ecosystem.
-- Integrated secure authentication and authorization using Passport.js.
-- Implemented complete CRUD functionality for property listings and reviews.
-- Leveraged Cloudinary for efficient cloud-based media storage and management.
-- Developed reusable middleware for validation, authentication, and error handling.
-- Followed RESTful API design principles and MVC architecture.
-- Utilized MongoDB and Mongoose for efficient data modeling and persistence.
-- Built a responsive and intuitive user interface for enhanced user experience.
-- Deployed the application on Render for public accessibility.
+```
+wanderlust/
+│
+├── controllers/
+├── models/
+├── routes/
+├── middleware/
+├── views/
+├── public/
+├── pages/
+├── fixtures/
+├── tests/
+├── utils/
+├── app.js
+├── playwright.config.ts
+└── package.json
+```
 
 ---
 
-# Learning Outcomes
+# ⚙ Installation
 
-Through this project, I strengthened my understanding of:
+Clone the repository
 
-- Full-Stack Web Development
-- Software Architecture (MVC)
-- RESTful API Design
-- Authentication & Authorization
-- Session Management
-- Cloud-Based Image Storage
-- MongoDB Data Modeling
-- CRUD Operations
-- Middleware Design
-- Error Handling
-- Server-Side Rendering
-- Responsive Web Design
-- Deployment & Production Hosting
-- Clean Code Principles
-- Scalable Application Development
+```bash
+git clone https://github.com/keshav15240/Wanderlust.git
+```
+
+Go into the project
+
+```bash
+cd Wanderlust
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Create a `.env` file and add:
+
+```env
+ATLASDB_URL=
+SECRET=
+CLOUD_NAME=
+CLOUD_API_KEY=
+CLOUD_API_SECRET=
+```
+
+Run the application
+
+```bash
+npm start
+```
+
+or
+
+```bash
+npm run dev
+```
+
+Open
+
+```
+http://localhost:8080
+```
 
 ---
 
-# Future Enhancements
+# 🧪 End-to-End Testing (Playwright)
 
-- Real-time booking and availability management
-- Payment gateway integration using Stripe
-- Interactive maps with Mapbox
-- Advanced search and filtering
-- Wishlist and favorites
-- Booking calendar
-- User messaging system
-- Email verification and notifications
-- Docker containerization
-- CI/CD pipeline using GitHub Actions
-- Automated testing with Jest
-- Microservices-based architecture
+This project includes automated UI testing using **Playwright**.
+
+## Implemented Tests
+
+- ✅ User Login
+- ✅ Create Listing
+
+### Framework Features
+
+- Page Object Model (POM)
+- Fixtures
+- Cross-Browser Testing
+- Chromium
+- Firefox
+- WebKit
+- HTML Reports
+- Trace Viewer
+- Screenshot Capture
+- Video Recording (configurable)
+
+Run all tests
+
+```bash
+npx playwright test
+```
+
+Run with browser visible
+
+```bash
+npx playwright test --headed
+```
+
+View HTML Report
+
+```bash
+npx playwright show-report
+```
 
 ---
 
-# Conclusion
+# 📊 Test Results
 
-Wanderlust represents a comprehensive full-stack web application that combines modern web technologies with software engineering best practices to deliver a scalable, secure, and user-centric vacation rental platform. The project reflects hands-on experience in backend development, database design, cloud integration, authentication, and application architecture while demonstrating the ability to build production-ready web applications using the MERN stack.
+```
+Running 6 tests using 1 worker
+
+✓ Chromium Login
+✓ Chromium Create Listing
+✓ Firefox Login
+✓ Firefox Create Listing
+✓ WebKit Login
+✓ WebKit Create Listing
+
+6 passed
+```
+
+---
+
+# 🔒 Security
+
+Sensitive information is stored securely using environment variables.
+
+The following files are ignored:
+
+```
+.env
+node_modules/
+playwright-report/
+test-results/
+```
+
+---
+
+# 📈 Future Improvements
+
+- Booking System
+- Payment Integration
+- Wishlist
+- Advanced Search
+- Maps Integration
+- User Profiles
+- Admin Dashboard
+- CI/CD using GitHub Actions
+- Docker Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Keshav Gupta**
+
+- GitHub: https://github.com/keshav15240
+- LinkedIn: https://www.linkedin.com/in/keshav15240/
+
+---
+
+# ⭐ If you found this project useful, consider giving it a star!

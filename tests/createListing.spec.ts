@@ -14,6 +14,7 @@ test("Create Listing", async ({ page }) => {
 
   await listingPage.openNewListingPage();
   await listingPage.createListing(listing);
+ 
 
   await expect(page).toHaveURL(/\/$/);
   await expect(page.locator("body")).toContainText(listing.title);

@@ -33,7 +33,7 @@ export const showListing = async (req, res) => {
 
   if (!listing) {
     req.flash("error", "Cannot find that listing.");
-    return res.redirect("/listing");
+    return res.redirect("/");
   }
 
   res.render("listing/show", { listing });
@@ -43,20 +43,26 @@ export const showNewForm = (req, res) => {
   res.render("listing/new");
 };
   
-
 export const createListing = async (req, res) => {
-  const newListing = new Listing(req.body.listing);
-newListing.owner = req.user._id;
+  console.log(">>> NEW createListing controller is running <<<");
 
-if (req.file) {
-  newListing.image = {
-    url: req.file.path,
-    filename: req.file.filename,
-  };
-}
-await newListing.save();
+  const newListing = new Listing(req.body.listing);
+  newListing.owner = req.user._id;
+
+  if (req.file) {
+    newListing.image = {
+      url: req.file.path,
+      filename: req.file.filename,
+    };
+  }
+
+  await newListing.save();
+
   req.flash("success", "New Listing Created!");
-  res.redirect("/listing");
+
+  console.log("Redirecting to /");
+
+  res.redirect("/");
 };
 
 export const showEditForm = async (req, res) => {
@@ -65,7 +71,7 @@ export const showEditForm = async (req, res) => {
 
   if (!listingData) {
     req.flash("error", "Cannot find that listing");
-    return res.redirect("/listing");
+    return res.redirect("/");
   }
   let originalimageurl = listingData.image.url;
 originalimageurl = originalimageurl.replace("/upload", "/upload/w_300,h_200,c_fill");
@@ -94,7 +100,7 @@ export const updateListing = async (req, res) => {
   }
 
   req.flash("success", "Listing updated!");
-  res.redirect(`/listing/${id}`);
+  res.redirect(`/${id}`);
 };
 
 export const deleteListing = async (req, res) => {
@@ -103,5 +109,5 @@ export const deleteListing = async (req, res) => {
   await Listing.findByIdAndDelete(id);
 
   req.flash("success", "Listing deleted!");
-  res.redirect("/listing");
+  res.redirect("/");
 };

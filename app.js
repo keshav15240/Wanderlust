@@ -28,22 +28,6 @@ const PORT = process.env.PORT || 8080;
 // Database Connection
 // ======================
 mongoose.set("strictQuery", true);
-
-async function connectDB() {
-  try {
-    console.log("Connecting to MongoDB...");
-    await mongoose.connect(process.env.ATLASDB_URL, {
-      serverSelectionTimeoutMS: 10000,
-    });
-    console.log("✅ MongoDB Connected Successfully!");
-  } catch (err) {
-    console.error("❌ MongoDB Connection Error:");
-    console.error(err);
-    process.exit(1);
-  }
-}
-connectDB();
-
 // ======================
 // Session Configuration
 // ======================
@@ -134,9 +118,19 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("listing/error", { err });
 });
 
-// ======================
-// Start Server
-// ======================
-app.listen(PORT, () => {
-  console.log(` Server is running on port ${PORT}`);
-});
+async function startServer() {
+  try {
+    console.log("Connecting to MongoDB...");
+    await mongoose.connect(process.env.ATLASDB_URL);
+
+    console.log("✅ MongoDB Connected Successfully!");
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+startServer();

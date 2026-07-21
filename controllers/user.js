@@ -46,101 +46,101 @@ export const logout = (req, res, next) => {
 };
 
 export const helpCenter = (req, res) => {
-  res.render("helpcenter");
+  res.render("help/helpcenter");
 };
 
 // Support controllers
 export const getHelpWithSafetyIssue = (req, res) => {
-  res.render("get-help-with-safety-issue");
+  res.render("help/get-help-with-safety-issue");
 };
 
 export const airCover = (req, res) => {
-  res.render("aircover");
+  res.render("hosts/aircover");
 };
 
 export const antiDiscrimination = (req, res) => {
-  res.render("anti-discrimination");
+  res.render("legal/anti-discrimination");
 };
 
 export const disabilitySupport = (req, res) => {
-  res.render("disability-support");
+  res.render("help/disability-support");
 };
 
 export const cancellationOptions = (req, res) => {
-  res.render("cancellation-options");
+  res.render("help/cancellation-options");
 };
 
 export const reportNeighbourhoodConcern = (req, res) => {
-  res.render("report-neighbourhood-concern");
+  res.render("help/report-neighbourhood-concern");
 };
 
 // Hosting controllers
 export const hostYourHome = (req, res) => {
-  res.render("host-your-home");
+  res.render("hosts/host-your-home");
 };
 
 export const hostAnExperience = (req, res) => {
-  res.render("host-an-experience");
+  res.render("hosts/host-an-experience");
 };
 
 export const hostAService = (req, res) => {
-  res.render("host-a-service");
+  res.render("hosts/host-a-service");
 };
 
 export const airCoverForHosts = (req, res) => {
-  res.render("aircover-for-hosts");
+  res.render("hosts/aircover-for-hosts");
 };
 
 export const hostingResources = (req, res) => {
-  res.render("hosting-resources");
+  res.render("hosts/hosting-resources");
 };
 
 export const communityForum = (req, res) => {
-  res.render("community-forum");
+  res.render("community/community-forum");
 };
 
 export const hostingResponsibly = (req, res) => {
-  res.render("hosting-responsibly");
+  res.render("hosts/hosting-responsibly");
 };
 
 export const joinHostingClass = (req, res) => {
-  res.render("join-hosting-class");
+  res.render("hosts/join-hosting-class");
 };
 
 export const findCohost = (req, res) => {
-  res.render("find-cohost");
+  res.render("hosts/find-cohost");
 };
 
 // Wanderlust controllers
 export const summerRelease2026 = (req, res) => {
-  res.render("summer-release-2026");
+  res.render("company/summer-release-2026");
 };
 
 export const newsroom = (req, res) => {
-  res.render("newsroom");
+  res.render("company/newsroom");
 };
 
 export const careers = (req, res) => {
-  res.render("careers");
+  res.render("company/careers");
 };
 
 export const investors = (req, res) => {
-  res.render("investors");
+  res.render("company/investors");
 };
 
 export const emergencyStays = (req, res) => {
-  res.render("emergency-stays");
+  res.render("help/emergency-stays");
 };
 
 // Footer bottom controllers
 export const privacy = (req, res) => {
-  res.render("privacy");
+  res.render("legal/privacy");
 };
 
 export const terms = (req, res) => {
-  res.render("terms");
+  res.render("legal/terms");
 };
 
 export const companyDetails = (req, res) => {
-  res.render("company-details");
+  res.render("company/company-details");
 };
